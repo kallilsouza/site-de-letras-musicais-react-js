@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {
-  HashRouter
+  BrowserRouter
 } from "react-router-dom";
 
 import Header from "../../components/Header"
@@ -11,14 +11,14 @@ import "../../styles/global.css"
 class Main extends Component {
   render() {
     return (
-        <HashRouter>
+        <BrowserRouter>
             <div>
                 <Header/>
                 <div className="content">
                     <Routes/>
                 </div>
             </div>
-        </HashRouter>        
+        </BrowserRouter>        
     );
   }
 }
