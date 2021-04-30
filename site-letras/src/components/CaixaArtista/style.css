@@ -1,0 +1,26 @@
+.caixa-artista {
+    padding: 20px;
+    background-color: rgb(255, 255, 0);
+    color: black;
+    width: fit-content;
+    margin: 10px;
+}
+
+.caixa-artista:hover {
+    cursor: pointer;
+    box-shadow: black 5px 5px;
+    transition: box-shadow 0.25s;
+}
+
+.caixa-artista-imagem {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.caixa-artista-nome {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    text-align: center;
+    margin: 3px;
+}
