@@ -1,14 +1,22 @@
-import React, { Component } from "react";
+import React from "react";
+
+import api from "../../services/api"
+
+const carregarArtistas = () => {
+  api.get("/artistas/")
+  .then(
+    r => console.log(r)
+  )
+}
  
-class Artistas extends Component {
-  render() {
-    return (
+const Artistas = () => {
+  carregarArtistas()
+  return(
       <div>
-        <h1 className="titulo-principal">Artistas</h1>
-        
+        <h1 className="titulo-principal">Artistas</h1>        
       </div>
-    );
-  }
+  )
+      
 }
  
 export default Artistas;
