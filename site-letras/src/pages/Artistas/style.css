@@ -3,7 +3,9 @@
     flex-wrap: wrap;
     flex-direction: row;
     list-style-type: none;
-    width: 100%;
+    left: 50%;
+    position: relative;
+    transform: translate(-50%);
 }
 
 .lista-artistas a {

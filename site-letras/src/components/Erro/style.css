@@ -1,0 +1,19 @@
+.erro {
+    padding: 10px;
+    background-color: rgb(200, 0, 0);
+    width: fit-content;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.erro h3 {
+    color: white;
+    font-size: 24px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.erro p {
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 18px;
+}

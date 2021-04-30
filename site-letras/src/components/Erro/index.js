@@ -1,11 +1,14 @@
 import React from 'react'
 
-function index() {
+import "./style.css"
+
+const Erro = (props) => {
     return (
         <div className="erro">
-            
+            <h3>Erro:</h3>
+                <p>{props.mensagem}</p>
         </div>
     )
 }
 
-export default index
+export default Erro

@@ -1,5 +1,42 @@
-.nome-artista {
+.pagina-artista-nome {
     margin: 10px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
+    text-align: center;
+}
+
+.pagina-artista-imagem {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    left: 50%;
+    box-shadow: black 5px 5px;
+}
+
+.pagina-artista-nome-imagem {
+    margin: 10px;
+    width: fit-content;
+}
+
+.pagina-artista-info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.pagina-artista-sobre {
+    display: block;
+    width: 600px;
+    height: 320px;
+    margin: 10px;
+}
+
+.pagina-artista-sobre h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+}
+
+.pagina-artista-sobre p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
 }
