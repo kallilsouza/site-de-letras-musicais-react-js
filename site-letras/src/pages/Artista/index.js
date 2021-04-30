@@ -35,7 +35,7 @@ const Artistas = (props) => {
             }
         }
     )
-  }, []);
+  }, [props.match.params.nome]);
   return(      
       <div>
         {erro && <Erro mensagem="Artista não encontrado"/>}
