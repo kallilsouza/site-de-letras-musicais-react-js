@@ -6,6 +6,35 @@
     margin: 10px;
 }
 
+.caixa-artista-nao-carregado {
+    padding: 20px;
+    background-color: rgb(255, 255, 95);
+    color: black;
+    width: fit-content;
+    margin: 10px;
+    animation-name: caixa-carregando;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes caixa-carregando {
+    0% {
+        background-color: rgb(248, 248, 26);
+    }
+
+    25% {
+        background-color: rgb(253, 253, 63);
+    }
+
+    75% {
+        background-color: rgb(253, 253, 63);
+    }
+
+    100% {
+        background-color: rgb(248, 248, 26);
+    }
+}
+
 .caixa-artista:hover {
     cursor: pointer;
     box-shadow: black 5px 5px;

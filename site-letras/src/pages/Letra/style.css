@@ -1,0 +1,31 @@
+.titulo-nome-artista {
+    margin: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    width: fit-content;
+}
+
+.titulo-nome-artista a {
+    text-decoration: underline;
+    color: black;
+    padding: 10px;
+}
+
+.titulo-nome-artista a:hover {
+    background-color: black;
+    color: white;
+    transition: background 0.2s, color 0.2s;
+}
+
+.letra {
+    margin: 16px;
+}
+
+.letra p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+h3 {
+    margin: 10px;
+}

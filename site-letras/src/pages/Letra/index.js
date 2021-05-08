@@ -8,6 +8,7 @@ import api from "../../services/api"
 import Erro from "../../components/Erro"
 
 import "../../styles/global.css"
+import "./style.css"
 
 const carregarCancao = async (nomeArtista, nomeCancao) => {
     return api({
@@ -57,9 +58,9 @@ const Letra = (props) => {
         return(
             <>
                 <h1 className="titulo-principal">{cancao.nome}</h1>
-                <h2><NavLink exact to={"/artista/"+cancao.artista_principal.nome}>{cancao.artista_principal.nome}</NavLink></h2>
+                <h2 className="titulo-nome-artista"><NavLink exact to={"/artista/"+cancao.artista_principal.nome}>{cancao.artista_principal.nome}</NavLink></h2>
                 <h3>Letra:</h3>
-                <div>
+                <div className="letra">
                     <p>
                     {cancao.letra.split("\n").map((i,key) => {
                         return <div key={key}>{i}</div>;
