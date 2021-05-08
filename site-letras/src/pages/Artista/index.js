@@ -15,7 +15,12 @@ const carregarArtista = async (nome) => {
 }
  
 const Artistas = (props) => {
-  const [artista, setArtista] = useState([])
+  const artistaVazio = {
+    nome: "",
+    sobre: "",
+    imagem: "",
+  }
+  const [artista, setArtista] = useState(artistaVazio)
   const [erro, setErro] = useState(false)
   const imagemPadrao = require('../../assets/imagens/no-image-found.png')
   const [URLImagem, setURLImagem] = useState(imagemPadrao.default)
@@ -27,37 +32,39 @@ const Artistas = (props) => {
                 if(r.data.results[0].imagem !== null){
                   setURLImagem(r.data.results[0].imagem)
                 }
-                //setCarregado(true)
             }
             else {
                 setErro(true)
-                //setCarregado(true)
             }
         }
     )
   }, [props.match.params.nome]);
-  return(      
-      <div>        
-        {erro && <Erro mensagem="Artista não encontrado"/>}
 
-        {(/*carregado && */!erro) &&     
+  if(erro){
+    return (
+      <Erro mensagem="Artista não encontrado"/>
+    )
+  }
+  else{
+    return(      
+      <div>       
           <div className="pagina-artista-info">
             <div className="pagina-artista-nome-imagem">          
-            <img className="pagina-artista-imagem" src={URLImagem} alt={artista === [] ? "" : artista.nome} />
-            <h2 className="pagina-artista-nome">{artista === [] ? "" : artista.nome}</h2>
+            <img className="pagina-artista-imagem" src={URLImagem} alt={artista.nome} />
+            <h2 className="pagina-artista-nome">{artista.nome}</h2>
           </div>
           <div className="pagina-artista-sobre">
             <h3>Sobre</h3>
             <p>
-              {artista === [] ? "" : artista.sobre}
+              {artista.sobre}
             </p>
             
           </div>
-          </div>   
-        }
-          
+          </div>             
       </div>
-  )
+    )
+  }
+  
       
 }
  
