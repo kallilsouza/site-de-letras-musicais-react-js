@@ -40,8 +40,7 @@ const Artistas = () => {
           </ul>
         </div>     
       </div>
-  )
-      
+  )      
 }
  
 export default Artistas;

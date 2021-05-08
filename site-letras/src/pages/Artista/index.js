@@ -1,9 +1,7 @@
 import {React, useState, useEffect} from "react";
 
 import api from "../../services/api"
-
 import "./style.css"
-
 import Erro from "../../components/Erro"
 
 const carregarArtista = async (nome) => {
@@ -29,18 +27,20 @@ const Artistas = (props) => {
                 if(r.data.results[0].imagem !== null){
                   setURLImagem(r.data.results[0].imagem)
                 }
+                //setCarregado(true)
             }
             else {
                 setErro(true)
+                //setCarregado(true)
             }
         }
     )
   }, [props.match.params.nome]);
   return(      
-      <div>
+      <div>        
         {erro && <Erro mensagem="Artista não encontrado"/>}
 
-        {!erro &&     
+        {(/*carregado && */!erro) &&     
           <div className="pagina-artista-info">
             <div className="pagina-artista-nome-imagem">          
             <img className="pagina-artista-imagem" src={URLImagem} alt={artista === [] ? "" : artista.nome} />
