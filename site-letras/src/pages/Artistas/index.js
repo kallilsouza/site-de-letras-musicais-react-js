@@ -1,8 +1,4 @@
 import {React, useState, useEffect} from "react";
-import {
-  NavLink
-} from "react-router-dom";
-
 import api from "../../services/api"
 
 import CaixaArtista from "../../components/CaixaArtista"
@@ -99,9 +95,7 @@ const Artistas = () => {
           <ul className="lista-artistas">
             {artistas.map((artista) => (
               <li className="lista-artistas-artista" key={artista.id}>
-                <NavLink to={"/artista/"+artista.nome}>
-                  <CaixaArtista artista={artista} />
-                </NavLink>
+                <CaixaArtista artista={artista} />
               </li>
             ))}
           </ul>

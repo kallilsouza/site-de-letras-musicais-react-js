@@ -41,6 +41,11 @@
     transition: box-shadow 0.25s;
 }
 
+.caixa-artista a {
+    text-decoration: none;
+    color: black;
+}
+
 .caixa-artista-imagem {
     width: 150px;
     height: 150px;

@@ -1,6 +1,8 @@
 import React from 'react'
+import {NavLink} from 'react-router-dom'
 
 import "./style.css"
+
 
 const CaixaArtista = (props) => {
     const imagemPadrao = require('../../assets/imagens/no-image-found.png')
@@ -8,8 +10,11 @@ const CaixaArtista = (props) => {
     const carregado = typeof(props.carregado) === 'undefined' ? true : props.carregado
     return (
         <div className={carregado === true ? "caixa-artista" : "caixa-artista-nao-carregado"}>
-            <img className="caixa-artista-imagem" src={urlImagem} alt={props.artista.nome} />
-            <div className="caixa-artista-nome">{props.artista.nome}</div>
+            <NavLink to={"/artista/"+props.artista.nome}>
+                <img className="caixa-artista-imagem" src={urlImagem} alt={props.artista.nome} />
+                <div className="caixa-artista-nome">{props.artista.nome}</div>
+            </NavLink>
+            
         </div>
     )
 }
