@@ -4,6 +4,9 @@ import "./style.css"
 
 const Busca = (props) => {
     const [termos, setTermos] = useState("")
+    const [tipoBusca, setTipoBusca] = useState("letras")
+    
+    const tiposBusca = ["letras", "artistas", "albuns"]
 
     useEffect(() => {
         let termosURL = (props.location.search.split('termos='))[1]   
@@ -14,13 +17,28 @@ const Busca = (props) => {
             termosURL = (termosURL.split('&'))[0]
         }
         setTermos(decodeURIComponent(termosURL))
+
+        let tipoBuscaURL = (props.location.search.split('tipo_busca='))[1]  
+        if(typeof(tipoBuscaURL) === 'undefined'){
+            tipoBuscaURL = ""
+        }
+        else{
+            tipoBuscaURL = (tipoBuscaURL.split('&'))[0]
+        }
+        if(tiposBusca.includes(tipoBuscaURL)){
+            setTipoBusca(tipoBuscaURL)
+        }
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const inputs = {
-        termos: {
+        "termos": {
             get: termos,
             set: setTermos,
+        },
+        "tipo-busca": {
+            get: tipoBusca,
+            set: setTipoBusca,
         }
     }
 
@@ -35,10 +53,25 @@ const Busca = (props) => {
     return (
         <div className="conteudo">
             <div className="container-form-busca">
-                <h1 className="titulo-busca">Procure por letras, artistas e álbuns...</h1>
+                <h1 className="titulo-busca">
+                    Procure por <span className={
+                        tipoBusca === "letras" ? "tipo-busca-selecionada" : "tipo-busca"
+                        } onClick={() => setTipoBusca("letras")}>
+                            letras
+                    </span>, <span className={
+                        tipoBusca === "artistas" ? "tipo-busca-selecionada" : "tipo-busca"
+                        } onClick={() => setTipoBusca("artistas")}>
+                        artistas
+                    </span> e <span className={
+                        tipoBusca === "albuns" ? "tipo-busca-selecionada" : "tipo-busca"
+                        } onClick={() => setTipoBusca("albuns")}>
+                        albuns
+                    </span>...
+                </h1>
                 <form className="form-busa" onSubmit={onSubmit}>
                     <input className="input-termos" type="text" name="termos" value={termos} onChange={onChange} />
-                    <br />
+                    <input type="hidden" name="tipo_busca" value={tipoBusca} />
+                    <br/>
                     <input className="input-submit" type="submit" value="buscar" />
                 </form>
             </div>   
