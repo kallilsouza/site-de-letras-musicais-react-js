@@ -110,7 +110,7 @@ const Busca = (props) => {
 
     return (
         <div className="conteudo">
-            <div className="container-form-busca">
+            <div className={letras.length === 0 && artistas.length === 0 ? "container-form-busca" : "container-form-busca-menor"}>
                 <h1 className="titulo-busca">
                     Procure por <span className={
                         tipoBusca === "letras" ? "tipo-busca-selecionada" : "tipo-busca"

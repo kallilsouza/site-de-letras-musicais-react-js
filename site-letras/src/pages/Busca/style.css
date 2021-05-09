@@ -2,11 +2,43 @@
     margin-top: 100px;
 }
 
+.container-form-busca-menor {
+    margin-top: 20px;
+    transition: margin 0.5s;
+}
+
 .titulo-busca {
-    text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
     line-height: 35px;
+    /*animation: titulo-busca 5.0s;
+    animation-iteration-count: 1;*/
+    width: fit-content;
+    position: relative;
+    left: 50%;
+    padding: 5px;
+    transform: translate(-50%);
+    border-style: solid;
+    border-color: white;
+    border-width: 2px;
+}
+
+@keyframes titulo-busca {
+    0% {
+        border-color: white;
+    }
+
+    25% {
+        border-color: rgb(255, 255, 0);
+    }
+
+    75% {
+        border-color: rgb(255, 255, 0);
+    }
+
+    100% {
+        border-color: white;
+    }
 }
 
 .input-termos {
