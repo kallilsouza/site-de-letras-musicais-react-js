@@ -1,8 +1,7 @@
 import React from 'react'
+import {NavLink} from 'react-router-dom'
 
 import "./style.css"
-
-import {NavLink} from 'react-router-dom'
 
 const CaixaCancao = ({cancao, mostrarNomeArtista}) => {
     mostrarNomeArtista = typeof(mostrarNomeArtista) === 'undefined' ? true : false

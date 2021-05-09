@@ -65,6 +65,9 @@ const Busca = (props) => {
         if(tiposBusca.includes(tipoBuscaURL)){
             setTipoBusca(tipoBuscaURL)
         }
+        if(tipoBuscaURL !== '' && termosURL !== ''){
+            chamarBusca({termos: termosURL, tipoBusca: tipoBuscaURL})
+        }
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
@@ -83,9 +86,10 @@ const Busca = (props) => {
         inputs[event.target.name].set(event.target.value)
     }
 
-    const chamarBusca = () => {
+    const chamarBusca = ({termos, tipoBusca}) => {
         realizarBusca({termos: termos, tipoBusca:tipoBusca}).then(
             r => {
+                console.log(r)
                 if(tipoBusca==='letras'){
                     setLetras(r.data.results)
                     setArtistas([])
@@ -100,7 +104,7 @@ const Busca = (props) => {
     }
 
     const onSubmit = (event) => {
-        chamarBusca()
+        chamarBusca({termos: termos, tipoBusca: tipoBusca})
         event.preventDefault()
     }
 
