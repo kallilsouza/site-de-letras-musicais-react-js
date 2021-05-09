@@ -7,7 +7,6 @@ import {
 import api from "../../services/api"
 import Erro from "../../components/Erro"
 
-import "../../styles/global.css"
 import "./style.css"
 
 const carregarCancao = async (nomeArtista, nomeCancao) => {
@@ -49,14 +48,14 @@ const Letra = (props) => {
     console.log(cancao)
     if(erro){
         return (
-            <>
+            <div className="conteudo">
                 <Erro mensagem="Letra não encontrada"/>
-            </>
+            </div>
         )
     }
     else{
         return(
-            <>
+            <div className="conteudo">
                 <h1 className="titulo-principal">{cancao.nome}</h1>
                 <h2 className="titulo-nome-artista"><NavLink exact to={"/artista/"+cancao.artista_principal.nome}>{cancao.artista_principal.nome}</NavLink></h2>
                 <h3>Letra:</h3>
@@ -67,7 +66,7 @@ const Letra = (props) => {
                     })}
                     </p>
                 </div>
-            </>
+            </div>
         )
     }
 }

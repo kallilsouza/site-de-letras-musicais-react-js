@@ -29,6 +29,7 @@ const Artistas = () => {
   const [page, setPage] = useState(1)
   const [qtdArtistas, setQtdArtistas] = useState(0)
   const [todosCarregados, setTodosCarregados] = useState(false)
+
   useEffect(() => {
     carregarArtistas({page: 1}).then( r =>{
       setArtistas(r.data.results)
@@ -92,7 +93,7 @@ const Artistas = () => {
   }
   else{
     return(
-      <div>
+      <div className="conteudo">
         <h1 className="titulo-principal">Artistas</h1>   
         <div className="container-lista-artistas">
           <ul className="lista-artistas">

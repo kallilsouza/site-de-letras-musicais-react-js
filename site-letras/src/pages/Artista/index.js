@@ -91,7 +91,7 @@ const Artistas = (props) => {
   }
   else{
     return(      
-      <div>       
+      <div className="conteudo">       
           <div className="pagina-artista-info">
             <div className="pagina-artista-nome-imagem">          
               <img className="pagina-artista-imagem" src={URLImagem} alt={artista.nome} />

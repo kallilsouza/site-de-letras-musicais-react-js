@@ -31,3 +31,14 @@
     padding: 5px;
     text-decoration: none;
 }
+
+.menu-principal-link:hover {
+    background-color: rgb(255, 255, 0);
+    color: black;
+    transition: background 0.2s, color 0.2s;
+}
+
+.active {
+    background-color: rgb(255, 255, 0);
+    color: black;
+}

@@ -13,6 +13,7 @@ function index() {
             </NavLink>
                 <nav className="menu-principal">
                     <NavLink exact to="/" className="menu-principal-link">Home</NavLink>
+                    <NavLink exact to="/busca" className="menu-principal-link">Busca</NavLink>
                     <NavLink exact to="/artistas" className="menu-principal-link">Artistas</NavLink>
                 </nav>
         </header>

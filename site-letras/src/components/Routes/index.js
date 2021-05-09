@@ -9,6 +9,7 @@ import Artistas from "../../pages/Artistas"
 import Artista from "../../pages/Artista"
 import Letra from "../../pages/Letra"
 import NotFound from "../../pages/NotFound"
+import Busca from "../../pages/Busca"
 
 function index() {
     return (
@@ -17,6 +18,7 @@ function index() {
             <Route exact path="/artistas" component={Artistas}/>
             <Route path="/artista/:nome" component={Artista}/>
             <Route path="/letra/:nomeArtista/:nomeCancao" component={Letra}/>
+            <Route exact path="/busca" component={Busca}/>
             <Route component={NotFound}/>
         </Switch>
     )

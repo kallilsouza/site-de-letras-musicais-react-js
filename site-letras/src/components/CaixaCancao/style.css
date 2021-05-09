@@ -1,0 +1,21 @@
+.caixa-cancao {
+    padding: 10px;
+    margin: 5px;
+}
+
+.caixa-cancao a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    background-color: rgb(150, 150, 0);
+    width: fit-content;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.caixa-cancao a:hover {
+    box-shadow: black 2px 2px;
+    margin-left: -2px;
+    margin-top: -2px;
+    transition: margin 0.2s, box-shadow 0.2s;
+}

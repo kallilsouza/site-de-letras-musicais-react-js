@@ -3,7 +3,7 @@ import React from "react";
  
 const Home = () => {
   return (
-    <div>
+    <div className="conteudo">
       <h1 className="titulo-principal">Pagina inicial</h1>
       <div className="caixa-de-texto">
         <p>
