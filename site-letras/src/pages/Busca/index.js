@@ -3,6 +3,9 @@ import api from '../../services/api'
 
 import "./style.css"
 
+import CaixaCancao from "../../components/CaixaCancao"
+import CaixaArtista from "../../components/CaixaArtista"
+
 const realizarBusca = async ({termos, tipoBusca}) => {
     if(tipoBusca === 'letras'){
         return api({
@@ -38,6 +41,9 @@ const Busca = (props) => {
     const [tipoBusca, setTipoBusca] = useState("letras")
     
     const tiposBusca = ["letras", "artistas", "albuns"]
+
+    const [letras, setLetras] = useState([])
+    const [artistas, setArtistas] = useState([])
 
     useEffect(() => {
         let termosURL = (props.location.search.split('termos='))[1]   
@@ -77,12 +83,24 @@ const Busca = (props) => {
         inputs[event.target.name].set(event.target.value)
     }
 
-    const onSubmit = (event) => {
+    const chamarBusca = () => {
         realizarBusca({termos: termos, tipoBusca:tipoBusca}).then(
             r => {
-                console.log(r)
+                if(tipoBusca==='letras'){
+                    setLetras(r.data.results)
+                    setArtistas([])
+                }
+                else if(tipoBusca==='artistas'){
+                    setArtistas(r.data.results)
+                    setLetras([])
+                }
             }
         )
+        window.history.pushState(null, null, "?termos="+termos+"&tipo_busca="+tipoBusca)        
+    }
+
+    const onSubmit = (event) => {
+        chamarBusca()
         event.preventDefault()
     }
 
@@ -112,7 +130,22 @@ const Busca = (props) => {
                 </form>
             </div>   
             <div className="resultados">
-
+                {letras.length > 0
+                    && <h3>Letras: </h3>
+                }
+                {letras.length > 0 &&
+                    letras.map((cancao, i) => {
+                        return <CaixaCancao cancao={cancao} />
+                    })
+                }
+                {artistas.length > 0
+                    && <h3>Artistas: </h3>
+                }
+                {artistas.length > 0 &&
+                    artistas.map((artista, i) => {
+                        return <CaixaArtista artista={artista} />
+                    })
+                }
             </div>         
         </div>
     )

@@ -100,7 +100,7 @@ const Artistas = () => {
             {artistas.map((artista) => (
               <li className="lista-artistas-artista" key={artista.id}>
                 <NavLink to={"/artista/"+artista.nome}>
-                  <CaixaArtista carregado={true} artista={artista} />
+                  <CaixaArtista artista={artista} />
                 </NavLink>
               </li>
             ))}

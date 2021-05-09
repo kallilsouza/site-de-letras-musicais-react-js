@@ -108,7 +108,7 @@ const Artistas = (props) => {
           <div className="pagina-artista-cancoes">
             <ul>
               {cancoes.map((cancao, i) => {
-                return <CaixaCancao cancao={cancao} />
+                return <CaixaCancao cancao={cancao} mostrarNomeArtista={false} />
               })}
             </ul>
           </div>     
