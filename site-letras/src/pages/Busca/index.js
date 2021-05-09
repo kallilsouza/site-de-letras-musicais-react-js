@@ -1,6 +1,37 @@
 import React, {useState, useEffect} from 'react'
+import api from '../../services/api'
 
 import "./style.css"
+
+const realizarBusca = async ({termos, tipoBusca}) => {
+    if(tipoBusca === 'letras'){
+        return api({
+            method: 'get',
+            url: '/cancoes/',
+            params: {
+                nome: termos
+            }
+        })
+    }
+    else if(tipoBusca === 'artistas'){
+        return api({
+            method: 'get',
+            url: '/artistas/',
+            params: {
+                nome: termos
+            }
+        })
+    }
+    else if(tipoBusca === 'albuns'){
+        return api({
+            method: 'get',
+            url: '/albuns/',
+            params: {
+                nome: termos
+            }
+        })
+    }
+}
 
 const Busca = (props) => {
     const [termos, setTermos] = useState("")
@@ -46,8 +77,13 @@ const Busca = (props) => {
         inputs[event.target.name].set(event.target.value)
     }
 
-    const onSubmit = () => {
-        
+    const onSubmit = (event) => {
+        realizarBusca({termos: termos, tipoBusca:tipoBusca}).then(
+            r => {
+                console.log(r)
+            }
+        )
+        event.preventDefault()
     }
 
     return (
