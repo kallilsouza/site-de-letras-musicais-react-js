@@ -61,9 +61,10 @@ const Letra = (props) => {
                 <h3>Letra:</h3>
                 <div className="letra">
                     <p>
-                    {cancao.letra.split("\n").map((i,key) => {
+                    {/* {cancao.letra.split("\n").map((i,key) => {
                         return <div key={key}>{i}</div>;
-                    })}
+                    })} */}
+                    {cancao.letra}
                     </p>
                 </div>
             </div>
